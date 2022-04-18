@@ -1,5 +1,5 @@
 import React from 'react';
-import Book from './Book';
+import Publication from './Publication';
 
 const Bookshelf = props => {
   const { shelf, books, onMove } = props;
@@ -11,7 +11,7 @@ const Bookshelf = props => {
       <div className="bookshelf-books">
         <ol className="books-grid">
           {booksOnThisShelf.map(book => (
-            <Book key={book.id} book={book} shelf={shelf.key} onMove={onMove} />
+            <Publication key={book.id} book={book} shelf={shelf.key} onMove={onMove} />
           ))}
         </ol>
       </div>

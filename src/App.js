@@ -3,15 +3,15 @@ import { Route } from 'react-router-dom';
 import { debounce } from 'throttle-debounce';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
-import ListBooks from './ListBooks';
+import AllBooksPage from './AllBooksPage';
 import SearchBooks from './SearchBooks';
 
-const bookshelves = [
+const bookracks = [
   { key: 'currentlyReading', name: 'Currently Reading' },
   { key: 'wantToRead', name: 'Want to Read' },
   { key: 'read', name: 'Read' }
 ];
-class BooksApp extends Component {
+class App extends Component {
   state = {
     myBooks: [],
     searchBooks: [],
@@ -71,8 +71,8 @@ class BooksApp extends Component {
           exact
           path="/"
           render={() => (
-            <ListBooks
-              bookshelves={bookshelves}
+            <AllBooksPage
+            bookracks={bookracks}
               books={myBooks}
               onMove={this.moveBook}
             />
@@ -95,4 +95,4 @@ class BooksApp extends Component {
   }
 }
 
-export default BooksApp;
+export default App;
